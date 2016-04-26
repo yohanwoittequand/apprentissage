@@ -1,14 +1,19 @@
 #/usr/bin/python3.5
 # coding:utf-8
 
+from verification import *
+
 print("{0}{1}Dessiner c'est gagner{1}{0}".format("#"*8,"-"*3))
 
 print()
 
-commencePartie= input("Voulez-vous démarrer un partie ? [ O - N ]")
+commencePartie= saisieDemmarrerJeu()
+
+retour = verifSaisieCommencer(commencePartie)
+
 #Faire un fonction de vérification en fonction des erreurs possible pour renvoyer un boolean
 
-print(commencePartie)
+print(retour)
 
 
 
