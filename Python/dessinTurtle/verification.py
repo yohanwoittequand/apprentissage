@@ -1,21 +1,23 @@
 #usr/bin/python3.5
 # coding:utf-8
 
+from affichageConsole import *
+
 def saisieDemmarrerJeu():
     return input("Voulez-vous démarrer un partie ? [ O - N ]")
 
-def estTypeString(saisieUtilisateur):
-    if type(saisieUtilisateur) == type(str()):
-        return True
 
 def verifSaisieCommencer(saisieUtilisateur):
-    if estTypeString(saisieUtilisateur):
-        if saisieUtilisateur[0].lower() == "o":
-            return True
+    saisieFormater = saisieUtilisateur.strip().lower()
+    if saisieFormater[0] == "o":
+        return True
+    elif saisieFormater[0] == "n":
+        affichageFin()
+        exit()
     else:
-        print("Votre saisie n'est pas valide.\n Entrer O ou N ")
+        print("\n\tVotre saisie n'est pas valide.\n\t\tEntrer O ou N\n")
         return False
-
+   
 
     
 

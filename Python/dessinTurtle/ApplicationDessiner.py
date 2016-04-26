@@ -2,19 +2,23 @@
 # coding:utf-8
 
 from verification import *
+from affichageConsole import *
 
-print("{0}{1}Dessiner c'est gagner{1}{0}".format("#"*8,"-"*3))
+affichageDebut()
+
+veutJouer= saisieDemmarrerJeu()
+
+while verifSaisieCommencer(veutJouer) == False:
+    veutJouer= saisieDemmarrerJeu()
+    verifSaisieCommencer(veutJouer)
 
 print()
-
-commencePartie= saisieDemmarrerJeu()
-
-retour = verifSaisieCommencer(commencePartie)
+print("On peut commencer")
+#retour = verifSaisieCommencer(veutJouer)
 
 #Faire un fonction de vérification en fonction des erreurs possible pour renvoyer un boolean
 
-print(retour)
 
 
 
-print("{0}{1}Fin du jeu ... A bientôt {1}{0}".format("#"*8,"-"*3))
+affichageFin()
